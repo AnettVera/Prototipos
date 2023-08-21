@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="shortcut icon" href="../Imagenes/mxlogo.png" />
+  <link rel="stylesheet" href="styleIndex.css"/>
+  <title>Inicio</title>
+  <jsp:include page="/layouts/header.jsp"/>
+</head>
+<jsp:include page="/layouts/navadmin.jsp"/>
+<body style="background: #fff">
+
+<!-- FORMULARIO PARA EL REGISTRO DE USUARIOS-->
+  <div class="overlay" id="overlay" >
+        <div class="pop-up" id="pop-up">
+            <a href="#" id="btn-cerrar" class="btn-cerrar"><i class="bi bi-x-lg"></i></a>
+            <h2 class="equipo">Registro de estudiantes</h2>
+            <form accept="" method="">
+              <input type="text" name="nombre" placeholder="Nombres" required="">
+              <input type="text" name="apellido1" placeholder="Apellido paterno" required="">
+              <input type="text" name="apellido2" placeholder="Apellido materno">
+              <input type="text" name="CURP" placeholder="CURP">
+              <input type="emaiñ" name="correo" placeholder="correo@institucional">
+              <label for="rol">Selecciona el rol del nuevo usuario:</label><br>
+          <select name="rol" id="rol">
+          <option value="estudiante">Estudiante</option>
+          <option value="docente">Docente</option>
+         </select>
+              <br><input type="submit" name="" value="Agregar"> 
+            </form>
+
+        </div>
+    </div>
+    <!--Formulario para modificar un usuario
+      ESTO FUE LO QUE SE CAMBIO-->
+<input type="checkbox" id="btn-modal">
+    <div class="container-modal">
+      <div class="content-modal">
+        <h2>Nombre <!--DEL USUARIO--></h2>
+        <form action="" method="" id="formulario-modal">
+
+          <label>Nombre:</label>
+          <input type="text" name="nombre">
+
+          <label>Apellido paterno:</label>
+          <input type="text" name="ap1">
+
+          <label>Apellido materno:</label>
+          <input type="text" name="ape2">
+
+          <label>CURP:</label>
+          <input type="text" name="curp">
+
+          <label>Contraseña:</label>
+          <input type="text" name="pass">
+
+           <label for="rol">Selecciona el estado del usuario:</label><br>
+          <select name="estado" id="estado">
+          <option value="true">Activo</option>
+          <option value="false">Desactivo</option>
+         </select>
+              <br><input type="submit" name="" value="modificar" id="btn-enviar"> 
+
+        </form>
+        <div class="btn-cerrar">
+          <label for="btn-modal">
+            Cancelar
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!--TERMINA LA 1° MODIFICACION-->
+
+
+  <button href="#"  class="btn-abrir" id="btn-abrir" for="btn-menu">
+    Registrar jugadores
+  </button>
+  <div class="boton-modal">
+                    <label for="btn-modal">
+                      Registrar equipo
+                    </label>
+                  </div>
+<h1>Resumen de liga</h1>
+
+
+<table class="container">
+  <thead>
+    <tr>
+      <th><h1>Equipo</h1></th>
+      <th><h1>Equipo</h1></th>
+      <th><h1>Ganador</h1></th>
+      <th><h1>Fecha</h1></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Google</td>
+      <td>9518</td>
+      <td>6369</td>
+      <td>01:32:50</td>
+    </tr>
+    <tr>
+      <td>Twitter</td>
+      <td>7326</td>
+      <td>10437</td>
+      <td>00:51:22</td>
+    </tr>
+    <tr>
+      <td>Amazon</td>
+      <td>4162</td>
+      <td>5327</td>
+      <td>00:24:34</td>
+    </tr>
+    <tr>
+      <td>LinkedIn</td>
+      <td>3654</td>
+      <td>2961</td>
+      <td>00:12:10</td>
+    </tr>
+    <tr>
+      <td>CodePen</td>
+      <td>2002</td>
+      <td>4135</td>
+      <td>00:46:19</td>
+    </tr>
+    <tr>
+      <td>GitHub</td>
+      <td>4623</td>
+      <td>3486</td>
+      <td>00:31:52</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

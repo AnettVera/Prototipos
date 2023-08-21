@@ -1,104 +1,229 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	 <link rel="stylesheet" type="text/css" href="../css/estiloHeader/header.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../css/estiloHeader/admin.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="../css/admin/gestion.css">
 </head>
 <style type="text/css">
-/*FONDO*/
-body {
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-}
 
-.background {
-	position: absolute;
-	width: 100%;
-	height: 100vh;
-	background: #f1ffff;
-	z-index: -1;
-	box-shadow: 0px 3px 8px rgba(0, 0, 0, 25%);
-}
-
-.background::before {
-	content: '';
-	position: absolute;
-	top: -30%;
-	left: -50%;
-	width: 100%;
-	height: 100vh;
-	background: linear-gradient(60deg, #03BB85, #03BB85, #03BB85);
-	transform-origin: bottom right;
-	animation: animate 6s linear infinite;
-}
-
-.background::after {
-	content: '';
-	position: absolute;
-	top: -50%;
-	left: -50%;
-	width: 100%;
-	height: 100vh;
-	background: linear-gradient(60deg, #001256, #001256, #001256);
-	transform-origin: bottom right;
-	animation: animate 6s linear infinite;
-	animation-delay: -3s;
-}
-
-@keyframes animate {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-.contenedor {
-	background: #ffffff;
-	width: 98%;
-	height: 100vh;
-	margin: auto;
-	position: relative;
-	z-index: 1;
-	box-shadow: 0px 3px 8px rgba(0, 0, 0, 25%);
-	display: flex;
-}
-
-
-	
 </style>
 <body>
-	<header style="z-index: 1;">
-  	<div class="navb-logo">
-       <a href="../index.html"> <img src="../IMG/sugel.png" alt="Logo"></a>
+
+  <!-- FORMULARIO PARA EL REGISTRO DE USUARIOS-->
+  <div class="overlay" id="overlay" >
+        <div class="pop-up" id="pop-up">
+            <a href="#" id="btn-cerrar" class="btn-cerrar"><i class="bi bi-x-lg"></i></a>
+            <h2 class="equipo">Registro de estudiantes</h2>
+            <form accept="" method="">
+              <input type="text" name="nombre" placeholder="Nombres" required="">
+              <input type="text" name="apellido1" placeholder="Apellido paterno" required="">
+              <input type="text" name="apellido2" placeholder="Apellido materno">
+              <input type="text" name="CURP" placeholder="CURP">
+              <input type="emaiñ" name="correo" placeholder="correo@institucional">
+              <label for="rol">Selecciona el rol del nuevo usuario:</label><br>
+          <select name="rol" id="rol">
+          <option value="estudiante">Estudiante</option>
+          <option value="docente">Docente</option>
+         </select>
+              <br><input type="submit" name="" value="Agregar"> 
+            </form>
+
+        </div>
+    </div>
+    <!--Formulario para modificar un usuario
+      ESTO FUE LO QUE SE CAMBIO-->
+<input type="checkbox" id="btn-modal">
+    <div class="container-modal">
+      <div class="content-modal">
+        <h2>Nombre <!--DEL USUARIO--></h2>
+        <form action="" method="" id="formulario-modal">
+
+          <label>Nombre:</label>
+          <input type="text" name="nombre">
+
+          <label>Apellido paterno:</label>
+          <input type="text" name="ap1">
+
+          <label>Apellido materno:</label>
+          <input type="text" name="ape2">
+
+          <label>CURP:</label>
+          <input type="text" name="curp">
+
+          <label>Contraseña:</label>
+          <input type="text" name="pass">
+
+           <label for="rol">Selecciona el estado del usuario:</label><br>
+          <select name="estado" id="estado">
+          <option value="true">Activo</option>
+          <option value="false">Desactivo</option>
+         </select>
+              <br><input type="submit" name="" value="modificar" id="btn-enviar"> 
+
+        </form>
+        <div class="btn-cerrar">
+          <label for="btn-modal">
+            Cancelar
+          </label>
+        </div>
       </div>
+    </div>
+
+    <!--TERMINA LA 1° MODIFICACION-->
+  <div class="background"></div>
+  <header class="header">
+    <div class="container">
+    <div class="btn-menu">
+      <label for="btn-menu">☰</label>
+    </div>
+      <div class="logo">
+      </div>
+      
+      <div class="menu">
+        <img src="../IMG/sugel.png" alt="Logo">
+      </div>
+    </div>
   </header>
-	<div class="background">
-		
-			<div class="contenedor">
 
-				<div class="usuarios">
-					<img src="">
-						<h2>Estudiantes</h2>
-						<a href="Estudiantes.html"></a>
+  
+<!--  --------------->
+<input type="checkbox" id="btn-menu">
+<div class="container-menu">
+  <div class="cont-menu">
 
-						<button value="Agregar"></button>
-				</div>
+    <center><div class="perfil"><i class="bi bi-person-circle"></i><br>
+      <h4>Admin</h4></div></center>
 
-				<div class="usuarios">
-					<img src="">
-						<h2>Docentes</h2>
-						<a href="Docentes.html"></a>
+    <nav>   
+      <a href="">Editar Perfil</a>
+      <a href="">Gestionar docentes</a>
+      <a href="">Gestionar estudiantes</a>
+      <div class="min-menA">
+      <a href="#"  class="btn-abrir" id="btn-abrir" for="btn-menu">Agregar usuario</a>
+    </div>
+      <div class="salir"><a href="">Salir</a></div>
+      
+    </nav>
+    <label for="btn-menu"><i class="bi bi-x-lg"></i></label>
+  </div>
+</div>
 
-						<button value="Agregar"></button>
-				</div>
-				
-			</div>
 
-	</div>
+      <div class="contenedor">
+        <div class="acciones">
+
+          <h1>Gestión de usuarios</h1>
+
+          <table>
+            <thead>
+              <tr>
+                <td colspan="4">USUARIOS<!--Estudiantes o docentes depende de q seleccione en el menu--></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                        <label class="switchBtn">
+                            <input type="checkbox" >
+                            <div class="slide round" ></div>
+                        </label>
+                    </td>
+                <td colspan="2">Ingrid Emalia Alvarez Avilez</td>
+                <td>
+                  <!--2° MODIFICACIÓN-->
+                  <div class="boton-modal">
+                    <label for="btn-modal">
+                      Editar
+                    </label>
+                  </div>
+                   <!-- ULTIMA-->
+                </td>
+
+              </tr>
+
+
+
+
+               <tr>
+                <td>
+                        <label class="switchBtn">
+                            <input type="checkbox" >
+                            <div class="slide round" ></div>
+                        </label>
+                    </td>
+                <td colspan="2">Leyla Alondra Villanueva Estrada</td>
+                <td>
+                  <!--2° MODIFICACIÓN-->
+                  <div class="boton-modal">
+                    <label for="btn-modal">
+                      Editar
+                    </label>
+                  </div>
+                   <!-- ULTIMA-->
+                </td>
+
+              </tr>
+
+
+
+               <tr>
+                <td>
+                        <label class="switchBtn">
+                            <input type="checkbox" >
+                            <div class="slide round" ></div>
+                        </label>
+                    </td>
+                <td colspan="2">Nieobe Jacqueline Hernandez Bernal</td>
+                <td>
+                  <!--2° MODIFICACIÓN-->
+                  <div class="boton-modal">
+                    <label for="btn-modal">
+                      Editar
+                    </label>
+                  </div>
+                   <!-- ULTIMA-->
+                </td>
+
+              </tr> <tr>
+                <td>
+                        <label class="switchBtn">
+                            <input type="checkbox" >
+                            <div class="slide round" ></div>
+                        </label>
+                    </td>
+                <td colspan="2">Moises santiago Gonzales Retana</td>
+                <td>
+                  <!--2° MODIFICACIÓN-->
+                  <div class="boton-modal">
+                    <label for="btn-modal">
+                      Editar
+                    </label>
+                  </div>
+                   <!-- ULTIMA-->
+                </td>
+
+              </tr>
+
+
+
+
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+
+  <script type="text/javascript" src="../js/agregar.js"></script>
+
+
+
+
 </body>
 </html>
